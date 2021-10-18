@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
@@ -13,14 +12,14 @@ import image5 from 'assets/images/jumpsuit-5.jpg'
 export const ImageSlider = () => (
   <AliceCarousel
     autoPlay
-    autoPlayInterval='5000'
-    controlsStrategy='default'
-    disableDotsControls='true'
+    autoPlayInterval={'5000'}
+    controlsStrategy={'default'}
+    disableDotsControls={'true'}
   >
-    <img src={image4} className='sliderimg' alt=''/>
-    <img src={image1} className='sliderimg' alt=''/>
-    <img src={image2} className='sliderimg' alt=''/>
-    <img src={image3} className='sliderimg' alt=''/>
-    <img src={image5} className='sliderimg' alt=''/>
+    <img src={image4} className={'sliderimg'} alt={''} />
+    <img src={image1} className={'sliderimg'} alt={''} />
+    <img src={image2} className={'sliderimg'} alt={''} />
+    <img src={image3} className={'sliderimg'} alt={''} />
+    <img src={image5} className={'sliderimg'} alt={''} />
   </AliceCarousel>
 )
