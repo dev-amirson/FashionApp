@@ -1,0 +1,52 @@
+.footerDiv{
+  background-color:black;
+  height:auto;
+  padding: 80px 100px ;
+  margin-top: 250px;
+}
+.footerHeading{
+  color: white;
+  font-family: sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+
+  padding: 10px;
+  text-align: left;
+  flex: 40%;
+}
+
+.flex-item-middle {
+  padding: 10px;
+  text-align: left;
+  flex: 40%;
+}
+
+.flex-item-right {
+  text-align: left;
+  padding: 10px;
+  flex: 20%;
+}
+.footerSocialIcons{
+  color: white;
+
+}
+.emailcontainer {
+  padding: 10px 0px;
+  background-color: black;
+}
+.forwardbtn {
+  background-image: linear-gradient(to right,#7a7ffb , #87effb);
+  border: none;
+  margin: 0px;
+  font-size: 12px;
+  color: white;
+  border-radius: 3px;
+}
