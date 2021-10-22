@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import 'containers/DetailsDiv/styles.scss'
 
 export const DetailsDiv = () => {
-  const productDesc = useSelector(state => state.product.description)
+  const productDesc = useSelector(state => state.product?.description)
   const productBullets = useSelector(state => state.product.bullets)
   const productName = useSelector(state => state.product.name)
   const productPrice = useSelector(state => state.product.price)

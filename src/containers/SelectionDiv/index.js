@@ -1,20 +1,20 @@
 import { injectStyle } from 'react-toastify/dist/inject-style'
+import { ToastContainer, toast } from 'react-toastify'
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
 import Tooltip from '@mui/material/Tooltip'
 
-import 'containers/SelectionDiv/styles.scss'
 import { ADD_ITEM } from 'Actions'
+import 'containers/SelectionDiv/styles.scss'
 
 const ORDER_INITIAL_STATE = { quantity: 0, sizeId: 0, colorId: 'null' }
 
 export const SelectionDiv = () => {
   const dispatch = useDispatch()
-  let [itemQuantity, setQuantity] = useState(0)
+  const [itemQuantity, setQuantity] = useState(0)
   const productDetails = useSelector(state => state.product)
-  let [colors, showColors] = useState(productDetails.sizes[0].colors)
-  let [order, setOrder] = useState(ORDER_INITIAL_STATE)
+  const [colors, showColors] = useState(productDetails.sizes[0].colors)
+  const [order, setOrder] = useState(ORDER_INITIAL_STATE)
 
   const getSizes = () =>
     productDetails.sizes.map(size => (

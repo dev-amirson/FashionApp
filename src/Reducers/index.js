@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM } from 'Actions'
+import { ADD_ITEM, REMOVE_ITEM, ADD_MSG } from 'Actions'
 
 import { initialState } from 'initialState'
 
@@ -9,6 +9,7 @@ const Reducers = (state = initialState, action) => {
     sizeIndex,
     colorIndex,
     quantity = undefined
+
   switch (action.type) {
     case ADD_ITEM:
       copyState = { ...state }
@@ -39,6 +40,10 @@ const Reducers = (state = initialState, action) => {
       sizes[sizeIndex].colors[colorIndex].quantity = quantity - action.payload.quantity
 
       return { ...copyState, sizes: sizes, cart: cart }
+
+    case ADD_MSG:
+      copyState['chat'].push(action.payload.msg)
+      return { ...copyState }
 
     default:
       return state

@@ -1,5 +1,0 @@
-export { ImageSlider } from 'Components/ImageSlider'
-export { Header } from 'Components/Header'
-export { Footer } from 'Components/Footer'
-export { TopHeader } from 'Components/TopHeader'
-export { CheckOutProduct } from 'Components/CheckOutProduct'
