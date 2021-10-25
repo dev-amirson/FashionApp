@@ -1,9 +1,9 @@
 ## Demo
-
+---
 Deployment link will be placed later [Demo](https://github.com/awais0198/FashionApp).
 
 ## Requirements
-
+---
 For development, you will only need Node.js installed on your environement. And please use the appropriate Editorconfig plugin for your [Editor](https://editorconfig.org/) (not mandatory)
 
 ### Node
@@ -46,18 +46,18 @@ sudo apt-get install nodejs
 ```
 
 ## Install
-
+---
 ```javascript
 $ npm install
 ```
 
 ## Start & watch
-
+---
 ```javascript
 $ npm start
 ```
 ### Languages & tools
-
+---
 #### Templating
 * [HTML](http://jade-lang.com/) for some structuring.
 #### JavaScript
@@ -69,7 +69,7 @@ $ npm start
 
 
 ## Notes
-
+---
 * I have implemented the product detail page with proper add to bag functionality.
 * I have not used any library like jquery or lodash. Whereas jquery is not recommented in react as it directly affects Actual DOM but react is running on Virtual DOM.
 * I have added quality in sample json that you provided.

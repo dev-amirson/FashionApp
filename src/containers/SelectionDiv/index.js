@@ -4,36 +4,26 @@ import 'containers/SelectionDiv/styles.scss'
 import Tooltip from '@mui/material/Tooltip'
 
 export const SelectionDiv = () => {
-  const productDetails = useSelector(state => state.product)
   let [itemQuantity, setQuantity] = useState(0)
+  const productDetails = useSelector(state => state.product)
 
-  const getSizes = () => {
-    let res = []
-    productDetails.sizes.map(size => {
-      res.push(
-        <button className={'rounded-button'} key={size.id}>
-          {size.abbreviation}
-        </button>
-      )
-    })
-    return res
-  }
+  const getSizes = () =>
+    productDetails.sizes.map(size => (
+      <button className={'rounded-button'} key={size.id}>
+        {size.abbreviation}
+      </button>
+    ))
 
-  const getMaterials = () => {
-    let res = []
-    productDetails.materials.map(material => {
-      res.push(
-        <button
-          className={'rounded-material-button'}
-          key={material.id}
-          style={{ backgroundColor: '#cc637e', color: 'white' }}
-        >
-          {material}
-        </button>
-      )
-    })
-    return res
-  }
+  const getMaterials = () =>
+    productDetails.materials.map(material => (
+      <button
+        className={'rounded-material-button'}
+        key={material.id}
+        style={{ backgroundColor: '#cc637e', color: 'white' }}
+      >
+        {material}
+      </button>
+    ))
 
   return (
     <div className={'stack-div'}>
