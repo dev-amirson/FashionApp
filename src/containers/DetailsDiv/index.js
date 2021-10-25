@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 
-import 'Containers/DetailsDiv/styles.scss'
+import 'containers/DetailsDiv/styles.scss'
 
 export const DetailsDiv = () => {
   const productDesc = useSelector(state => state.product.description)
@@ -8,11 +8,10 @@ export const DetailsDiv = () => {
   const productName = useSelector(state => state.product.name)
   const productPrice = useSelector(state => state.product.price)
 
-  const getListBullets = () => {
-    return productBullets.map(item => <li key={item}>{item}</li>)
-  }
+  const getListBullets = () => productBullets.map(item => <li key={item}>{item}</li>)
+
   return (
-    <div className={'stackedDiv'}>
+    <div className={'stacked-div'}>
       <h1 className={'h1'}> {productName} </h1>
       <hr />
       <h2 className={'h2'}> $ {productPrice} </h2>

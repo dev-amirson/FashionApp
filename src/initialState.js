@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 export const initialState = {
   product: {
     id: 890,
@@ -51,11 +50,11 @@ export const initialState = {
       'Silk material, reinforced stitching'
     ],
     images: [
-      { order: 0, url: require('Assets/images/jumpsuit-1.jpg') },
-      { order: 1, url: require('Assets/images/jumpsuit-2.jpg') },
-      { order: 2, url: require('Assets/images/jumpsuit-3.jpg') },
-      { order: 3, url: require('Assets/images/jumpsuit-4.jpg') },
-      { order: 4, url: require('Assets/images/jumpsuit-5.jpg') }
+      { order: 0, url: 'Assets/images/jumpsuit-1.jpg' },
+      { order: 1, url: 'Assets/images/jumpsuit-2.jpg' },
+      { order: 2, url: 'Assets/images/jumpsuit-3.jpg' },
+      { order: 3, url: 'Assets/images/jumpsuit-4.jpg' },
+      { order: 4, url: 'Assets/images/jumpsuit-5.jpg' }
     ],
     materials: ['Silk'],
     price: 12000,

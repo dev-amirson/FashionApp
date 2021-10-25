@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux'
 
 import 'App.css'
-import { Header, Footer, DetailsDiv, SelectionDiv, TopHeader } from 'Containers'
-import { ImageSlider } from 'Components'
+import { Header, Footer, DetailsDiv, SelectionDiv, TopHeader } from 'containers'
+import { ImageSlider } from 'components'
 import store from 'store'
 
 export const App = () => (

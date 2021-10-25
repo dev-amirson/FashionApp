@@ -7,13 +7,11 @@ const Reducers = (state = initialState, action) => {
     case ADD_ITEM:
       return {
         ...state
-        //[action.payload.item]: itemQuantity
       }
 
     case REMOVE_ITEM:
       return {
         ...state
-        //[action.payload.item]: itemQuantity
       }
 
     default:

@@ -1,8 +1,7 @@
-//import { AiOutlineShoppingCart } from 'react-icons/ai'
-import 'Containers/Header/styles.scss'
+import 'containers/Header/styles.scss'
 
 export const Header = () => (
-  <div className={'headerDiv'}>
+  <div className={'header-div'}>
     <nav className={'main-nav'}>
       <ul>
         <li className={'logoHeading'}>
