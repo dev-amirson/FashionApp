@@ -26,7 +26,8 @@ export const initialState = {
         abbreviation: 'L',
         colors: [
           { name: 'red', quantity: 8 },
-          { name: 'blue', quantity: 22 }
+          { name: 'blue', quantity: 22 },
+          { name: 'black', quantity: 22 }
         ]
       },
       {

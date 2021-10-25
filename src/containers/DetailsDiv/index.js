@@ -14,7 +14,7 @@ export const DetailsDiv = () => {
     <div className={'stacked-div'}>
       <h1 className={'h1'}> {productName} </h1>
       <hr />
-      <h2 className={'h2'}> $ {productPrice} </h2>
+      <h2 className={'h2'}> $ {productPrice / 100} </h2>
       <p>{productDesc}</p>
       <ul>{getListBullets()}</ul>
     </div>

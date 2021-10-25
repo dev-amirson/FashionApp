@@ -1,17 +1,20 @@
+import { Link } from 'react-router-dom'
+
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
-import 'containers/TopHeader/styles.scss'
+import 'components/TopHeader/styles.scss'
 
 export const TopHeader = () => (
-  <div className={'top-div'}>
+  <div className={'topDiv'}>
     <p className={'pa'}>
       <b> DAILY FASHION</b>
     </p>
     <p className={'pa'}>
       <b> FREE SHIPPING</b>
     </p>
-    <a href={'#nextPage'}>
-      <AiOutlineShoppingCart className={'cart-icon'} />
-    </a>
+    <Link to={'/cart'}>
+      {' '}
+      <AiOutlineShoppingCart className={'cartIcon'} />{' '}
+    </Link>
   </div>
 )

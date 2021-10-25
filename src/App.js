@@ -1,21 +1,19 @@
-import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import 'App.css'
-import { Header, Footer, DetailsDiv, SelectionDiv, TopHeader } from 'containers'
-import { ImageSlider } from 'components'
-import store from 'store'
+import { Home, CheckOut } from 'containers'
 
 export const App = () => (
-  <Provider store={store}>
+  <Router>
     <div>
-      <TopHeader />
-      <Header />
-      <div className={'App'}>
-        <ImageSlider />
-        <DetailsDiv />
-        <SelectionDiv />
-      </div>
-      <Footer />
+      <Switch>
+        <Route exact path={'/'}>
+          <Home />
+        </Route>
+
+        <Route path={'/cart'}>
+          <CheckOut />
+        </Route>
+      </Switch>
     </div>
-  </Provider>
+  </Router>
 )
