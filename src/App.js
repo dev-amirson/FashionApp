@@ -1,14 +1,21 @@
-/* eslint-disable prettier/prettier */
+import { Provider } from 'react-redux'
+
 import 'App.css'
-import { Header, Footer } from 'Containers'
+import { Header, Footer, DetailsDiv, SelectionDiv, TopHeader } from 'Containers'
 import { ImageSlider } from 'Components'
+import store from 'store'
 
 export const App = () => (
-  <div>
-    <Header />
-    <div className='App'>
-      <ImageSlider />
+  <Provider store={store}>
+    <div>
+      <TopHeader />
+      <Header />
+      <div className={'App'}>
+        <ImageSlider />
+        <DetailsDiv />
+        <SelectionDiv />
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
+  </Provider>
 )
