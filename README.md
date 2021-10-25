@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+## Demo
+---
+Deployment link will be placed later [Demo](https://github.com/awais0198/FashionApp).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Requirements
+---
+For development, you will only need Node.js installed on your environement. And please use the appropriate Editorconfig plugin for your [Editor](https://editorconfig.org/) (not mandatory)
 
-## Available Scripts
+### Node
 
-In the project directory, you can run:
+[Node](https://nodejs.org/en/) is really easy to install & now include [NPM](https://www.npmjs.com/). You should be able to run the following command after the installation procedure below.
 
-### `yarn start`
+```javascript
+$ node --version
+v12.10.0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+$ npm --version
+6.11.3
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Node installation on OS X
 
-### `yarn test`
+You will need to use a Terminal. On OS X, you can find the default terminal in `/Applications/Utilities/Terminal.app`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Please install [Homebrew](https://brew.sh/) if it's not already done with the following command.
 
-### `yarn build`
+```javascript
+$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+If everything when fine, you should run
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+brew install node
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Node installation on Linux
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```javascript
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Install
+---
+```javascript
+$ npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Start & watch
+---
+```javascript
+$ npm start
+```
+### Languages & tools
+---
+#### Templating
+* [HTML](http://jade-lang.com/) for some structuring.
+#### JavaScript
+* [React](https://reactjs.org/) is used for UI.
+* React Redux is used for application state management.
+* Redux Thunk is used async dispatching of events.
+#### CSS
+* [Foundation](http://cssnext.putaindecode.io/) is used to write futureproof CSS for CSS vendor prefix under the hood).
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Notes
+---
+* I have implemented the product detail page with proper add to bag functionality.
+* I have not used any library like jquery or lodash. Whereas jquery is not recommented in react as it directly affects Actual DOM but react is running on Virtual DOM.
+* I have added quality in sample json that you provided.
+* I have added the contact us page with chat option whereas chat is only available between 9am to 5pm.
+* I have deployed it on [Heroku](https://daily-fashion.herokuapp.com/).
+* I have added colors with quantity in each sizes to make the case more realistic.
+* This is the sample json:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```json
+product: {
+    id: 890,
+    sizes: [
+      {
+        id: 123, name: 'Small', abbreviation: 'S',
+        colors: [
+          { name: 'red', quantity: 57 },
+          { name: 'black', quantity: 7 }
+        ]
+      },
+      {
+        id: 234, name: 'Medium', abbreviation: 'M',
+        colors: [
+          { name: 'black', quantity: 27 },
+          { name: 'blue', quantity: 17 }
+        ]
+      },
+    ],
+    colors: [
+      'black', 'red', 'orange', 'blue'
+    ],
+    name: 'The Special Pantsuit',
+    description: 'This is the coolest pantsuit you"ve ever seen. Fits like a dream. Wear this everywhere, and nowhere.',
+    bullets: [
+      'So baggy and yet hugs all the right places',
+      'Big hidden pockets',
+      'Front zipper so you can zip yourself in',
+      'Silk material, reinforced stitching'
+    ],
+    images: [
+      { order: 0, url: '../assets/jumpsuit-1.jpg' },
+      { order: 1, url: '../assets/jumpsuit-2.jpg' },
+      { order: 2, url: '../assets/jumpsuit-3.jpg' },
+      { order: 3, url: '../assets/jumpsuit-4.jpg' },
+      { order: 4, url: '../assets/jumpsuit-5.jpg' }
+    ],
+    materials: ['silk'],
+    price: 12000,
+    sizeInfo: 'These are sized a little small. We advise ordering the next size up from what you normally wear.',
+    materialInfo: '100% silk which feels very nice. These are meant to be warn slightly baggy so that they are comfortable. Zipper front with rolled up sleeves. Hip pockets on the front.'
+  }
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

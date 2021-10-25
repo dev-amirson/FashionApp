@@ -1,0 +1,40 @@
+.header-div {
+  background-color: white;
+  display: flex;
+  height: 130px;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-nav {
+  display: flex;
+  width: 100%;
+
+  .logo-heading {
+    font-size:24px;
+    margin-top: 10px;
+  }
+
+  li {
+    color: black;
+    font-family: 'Lucida Grande';
+    font-size: 16px;
+    text-align: center;
+  }
+
+  li a {
+    color: black;
+    display: block;
+    padding: 20px;
+    text-decoration:none
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding:  0px 70px;
+  }
+
+  justify-content: center;
+}
