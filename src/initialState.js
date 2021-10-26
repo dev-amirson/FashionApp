@@ -72,5 +72,6 @@ export const initialState = {
   currency: {
     symbol: '$',
     title: 'USD'
-  }
+  },
+  size: { S: 123, M: 234, L: 345, XL: 456 }
 }
