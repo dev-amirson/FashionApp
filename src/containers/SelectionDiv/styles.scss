@@ -19,6 +19,7 @@
 .counter-btn {
   background-color: #f8f8fa;
   border-radius: 7px;
+  font-size: 20px;
   height: 45px;
   width: 60px;
 }
@@ -44,12 +45,13 @@
   border-radius: 70%;
   border-style: solid;
   color: #000;
+  cursor: pointer;
   font-family: 'LucidaGrande';
   font-size: 16px;
   height: 40px;
   margin-bottom: 0px;
   margin-top: 10px;
-  margin: 0px 4px;
+  margin: 0px 8px;
   padding: 0px;
   width: 40px;
 }
@@ -60,10 +62,11 @@
   border: 2px;
   border: none;
   color: #000;
+  cursor: pointer;
   font-family: 'LucidaGrande';
   font-size: 16px;
   height: 40px;
-  margin: 10px 4px;
+  margin: 10px 8px;
   padding: 0px;
   width: 40px;
 }
@@ -71,11 +74,12 @@
 .rounded-color-button {
   border-radius: 70%;
   border: 0px;
+  cursor: pointer;
   font-family: 'LucidaGrande';
   height: 40px;
   margin-bottom: 0px;
   margin-top: 10px;
-  margin: 0px 4px;
+  margin: 0px 8px;
   width: 40px;
 }
 

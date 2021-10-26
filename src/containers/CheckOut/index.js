@@ -10,25 +10,21 @@ export const CheckOut = () => {
   const price = useSelector(state => state.product.price)
 
   const getCart = () => {
-    let res = []
     if (cart.length === 0) {
-      res.push(<p> There is nothing in the cart yet.</p>)
-      return res
+      return <p> There is nothing in the cart yet.</p>
     }
-    for (let i = 0; i < cart.length; i++) {
-      res.push(
-        <CheckOutProduct
-          key={i + 1}
-          productName={name}
-          productSize={cart[i].sizeId}
-          productColor={cart[i].colorId}
-          productQuantity={cart[i].quantity}
-          productPrice={price}
-          listId={i + 1}
-        />
-      )
-    }
-    return res
+
+    return cart.map((item, i) => (
+      <CheckOutProduct
+        key={i + 1}
+        productName={name}
+        productSize={item.sizeId}
+        productColor={item.colorId}
+        productQuantity={item.quantity}
+        productPrice={price}
+        listId={i + 1}
+      />
+    ))
   }
   return (
     <div>

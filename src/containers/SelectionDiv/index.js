@@ -1,3 +1,4 @@
+import { FaCheck } from 'react-icons/fa'
 import { injectStyle } from 'react-toastify/dist/inject-style'
 import { ToastContainer, toast } from 'react-toastify'
 import { useSelector, useDispatch } from 'react-redux'
@@ -8,23 +9,32 @@ import { ADD_ITEM } from 'Actions'
 import 'containers/SelectionDiv/styles.scss'
 
 const ORDER_INITIAL_STATE = { quantity: 0, sizeId: 0, colorId: 'null' }
+const SELECTED = { boxShadow: '0px 0px 10px #000' }
+const UNSELECTED = { boxShadow: 'none' }
+const COLOR_SELECTED = { color: 'white' }
+const COLOR_UNSELECTED = { color: 'transparent' }
 
 export const SelectionDiv = () => {
   const dispatch = useDispatch()
   const [itemQuantity, setQuantity] = useState(0)
+  const [sizeSelected, setSelectedSize] = useState(-1)
+  const [colorSelected, setSelectedColor] = useState('')
   const productDetails = useSelector(state => state.product)
   const [colors, showColors] = useState(productDetails.sizes[0].colors)
   const [order, setOrder] = useState(ORDER_INITIAL_STATE)
 
   const getSizes = () =>
-    productDetails.sizes.map(size => (
+    productDetails.sizes.map((size, i) => (
       <button
         className={'rounded-button'}
         key={size.id}
         onClick={() => {
           setOrder({ ...order, sizeId: size.id })
           showColors(size.colors)
+          setSelectedSize(i)
+          setSelectedColor('')
         }}
+        style={i == sizeSelected ? SELECTED : UNSELECTED}
       >
         {size.abbreviation}
       </button>
@@ -48,8 +58,17 @@ export const SelectionDiv = () => {
           className={'rounded-color-button'}
           key={color.name}
           style={{ backgroundColor: `${color.name}` }}
-          onClick={() => setOrder({ ...order, colorId: color.name })}
-        ></button>
+          onClick={() => {
+            setOrder({ ...order, colorId: color.name })
+            setSelectedColor(color.name)
+          }}
+        >
+          {colorSelected == color.name ? (
+            <FaCheck style={COLOR_SELECTED} />
+          ) : (
+            <FaCheck style={COLOR_UNSELECTED} />
+          )}
+        </button>
       ) : (
         <> </>
       )
@@ -69,6 +88,8 @@ export const SelectionDiv = () => {
       )
       setOrder(ORDER_INITIAL_STATE)
       setQuantity(0)
+      setSelectedSize(-1)
+      setSelectedColor('')
     } else if (order.sizeId === 0) {
       toast.error('PLEASE SELECT A SIZE')
     } else if (order.colorId === 'null') {
@@ -96,6 +117,7 @@ export const SelectionDiv = () => {
       </p>
       {getColors()}
       <hr />
+
       <div className={'guide-div'}>
         <p className={'ps'}>
           <b>Select Material</b>

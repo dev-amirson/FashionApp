@@ -1,6 +1,6 @@
 import { ADD_ITEM, REMOVE_ITEM, ADD_MSG } from 'Actions'
 
-import { initialState } from 'initialState'
+import { initialState } from 'Reducers/initialState'
 
 const Reducers = (state = initialState, action) => {
   let copyState,
@@ -42,6 +42,7 @@ const Reducers = (state = initialState, action) => {
       return { ...copyState, sizes: sizes, cart: cart }
 
     case ADD_MSG:
+      copyState = { ...state }
       copyState['chat'].push(action.payload.msg)
       return { ...copyState }
 

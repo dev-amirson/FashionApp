@@ -8,15 +8,15 @@ import 'containers/Chat/styles.scss'
 
 export const ChatModal = () => {
   const [isHidden, setState] = useState(false)
+  const [msg, setMsg] = useState('')
   const chat = useSelector(state => state.chat)
   const dispatch = useDispatch()
-  const [msg, setMsg] = useState('')
   const history = useHistory()
 
   const divClick = () => {
     let time = new Date().getHours()
 
-    if (time <= 9 || time >= 17) {
+    if (time <= 9 || time >= 20) {
       history.push('/contactus')
     } else {
       if (isHidden === true) {
@@ -27,25 +27,12 @@ export const ChatModal = () => {
     }
   }
 
-  const getChats = () => {
-    let res = []
-    for (let i = 0; i < chat.length; i++) {
-      if (i == 0) {
-        res.push(
-          <p className={'left-msg'} key={i}>
-            {chat[i]}
-          </p>
-        )
-      } else {
-        res.push(
-          <p className={'right-msg'} key={i}>
-            {chat[i]}
-          </p>
-        )
-      }
-    }
-    return res
-  }
+  const getChats = () =>
+    chat.map((chat, i) => (
+      <p className={i == 0 ? 'left-msg' : 'right-msg'} key={i}>
+        {chat}
+      </p>
+    ))
 
   const handleChange = e => {
     setMsg(e.target.value)
@@ -63,8 +50,10 @@ export const ChatModal = () => {
           <BsFillChatFill className={'icon'} />{' '}
         </span>
       </div>
+
       <div className={'chat-div'} style={{ display: isHidden ? 'block' : 'none' }}>
         {getChats()}
+
         <div className={'input-send'}>
           <input
             className={'input'}

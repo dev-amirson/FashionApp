@@ -5,8 +5,9 @@ import 'components/ContactUs/styles.scss'
 
 export const ContactUs = () => {
   const [status, setStatus] = useState('Submit')
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const handleSubmit = event => {
+    event.preventDefault()
+
     setStatus('Sending...')
   }
 
@@ -21,19 +22,23 @@ export const ContactUs = () => {
             <label htmlFor={'name'}>Name:</label>
             <input className={'input-contact'} required />
           </div>
+
           <div>
             <label htmlFor={'email'}>Email:</label>
             <input className={'input-contact'} type={'email'} required />
           </div>
+
           <div>
             <label htmlFor={'message'}>Message:</label>
             <textarea className={'input-contact'} required />
           </div>
+
           <button className={'submit-button'} type={'submit'}>
             {status}
           </button>
         </form>
       </div>
+
       <Footer />
     </div>
   )
