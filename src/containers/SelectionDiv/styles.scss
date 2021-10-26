@@ -1,7 +1,7 @@
 .cart-btn {
-  background-color: black;
-  border: 0px;
+  background-color: #000;
   border-radius: 5px;
+  border: 0px;
   color: white;
   font-size: 16px;
   height: 50px;
@@ -10,17 +10,17 @@
   width: 100%;
 }
 
-.counter-btn {
-  border: 0px;
-  border-radius: 5px;
-  height: 45px;
-  width: 60px;
-}
-
 .count-div {
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
+}
+
+.counter-btn {
+  background-color: #f8f8fa;
+  border-radius: 7px;
+  height: 45px;
+  width: 60px;
 }
 
 .guide-div {
@@ -28,11 +28,6 @@
   flex-direction: row;
   margin: 0px;
   width: 100%;
-}
-
-.ps {
-  letter-spacing: 0px;
-  line-height: 0;
 }
 
 .quantity-div {
@@ -45,10 +40,10 @@
 .rounded-button {
   background-color: #f8f8fa;
   border: 2px;
-  border-color: black;
-  border-style: solid;
+  border-color: #000;
   border-radius: 70%;
-  color: black;
+  border-style: solid;
+  color: #000;
   font-family: 'LucidaGrande';
   font-size: 16px;
   height: 40px;
@@ -61,16 +56,32 @@
 
 .rounded-material-button {
   background-color: #f8f8fa;
+  border-radius: 70%;
   border: 2px;
   border: none;
-  border-radius: 70%;
-  color: black;
+  color: #000;
   font-family: 'LucidaGrande';
   font-size: 16px;
   height: 40px;
   margin: 10px 4px;
   padding: 0px;
   width: 40px;
+}
+
+.rounded-color-button {
+  border-radius: 70%;
+  border: 0px;
+  font-family: 'LucidaGrande';
+  height: 40px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  margin: 0px 4px;
+  width: 40px;
+}
+
+.ps {
+  letter-spacing: 0px;
+  line-height: 0;
 }
 
 .stack-div {
@@ -85,7 +96,7 @@
 }
 
 .underline {
-  font-size: 13px;
-  margin: 5px 8px;
+  font-size: 14px;
+  margin: 7px 8px;
   text-decoration: underline;
 }

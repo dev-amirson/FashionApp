@@ -31,7 +31,7 @@ module.exports = {
           'arrowParens': 'avoid',
           'no-duplicate-variable': [true, 'check-parameters'],
           'no-var-keyword': true,
-          'endOfLine': 'lf',
+          'endOfLine': 'lf'
         },
       ],
       'no-debugger': 'warn',
@@ -39,6 +39,7 @@ module.exports = {
       "jsx-quotes": [2, 'prefer-single'],
       "react/react-in-jsx-scope": 0,
       "react/display-name": 0,
-      "react/prop-types": 0
+      "react/prop-types": 0,
+      "no-case-declarations": 0
     },
   };

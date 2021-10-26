@@ -1,5 +1,4 @@
 export { DetailsDiv } from 'containers/DetailsDiv'
-export { Footer } from 'containers/Footer'
-export { Header } from 'containers/Header'
 export { SelectionDiv } from 'containers/SelectionDiv'
-export { TopHeader } from 'containers/TopHeader'
+export { CheckOut } from 'containers/CheckOut'
+export { Home } from 'containers/Home'

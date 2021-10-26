@@ -1,6 +1,6 @@
 import { AiOutlineFacebook, AiOutlineTwitter, AiOutlineLinkedin } from 'react-icons/ai'
 
-import 'containers/Footer/styles.scss'
+import 'components/Footer/styles.scss'
 
 export const Footer = () => (
   <div className={'footer-div'}>
