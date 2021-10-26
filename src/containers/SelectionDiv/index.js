@@ -7,13 +7,14 @@ import Tooltip from '@mui/material/Tooltip'
 import 'containers/SelectionDiv/styles.scss'
 import { ADD_ITEM } from 'Actions'
 
-let order = { quantity: 0, sizeId: 0, colorId: 'null' }
+const ORDER_INITIAL_STATE = { quantity: 0, sizeId: 0, colorId: 'null' }
 
 export const SelectionDiv = () => {
+  const dispatch = useDispatch()
   let [itemQuantity, setQuantity] = useState(0)
   const productDetails = useSelector(state => state.product)
   let [colors, showColors] = useState(productDetails.sizes[0].colors)
-  const dispatch = useDispatch()
+  let [order, setOrder] = useState(ORDER_INITIAL_STATE)
 
   const getSizes = () =>
     productDetails.sizes.map(size => (
@@ -21,7 +22,7 @@ export const SelectionDiv = () => {
         className={'rounded-button'}
         key={size.id}
         onClick={() => {
-          order['sizeId'] = size.id
+          setOrder({ ...order, sizeId: size.id })
           showColors(size.colors)
         }}
       >
@@ -40,38 +41,38 @@ export const SelectionDiv = () => {
       </button>
     ))
 
-  const getColors = () => {
-    let aa = colors.map(color =>
+  const getColors = () =>
+    colors.map(color =>
       color.quantity > 0 ? (
         <button
           className={'rounded-color-button'}
           key={color.name}
           style={{ backgroundColor: `${color.name}` }}
-          onClick={() => (order['colorId'] = color.name)}
+          onClick={() => setOrder({ ...order, colorId: color.name })}
         ></button>
       ) : (
         <> </>
       )
     )
-    return aa
-  }
 
   if (typeof window !== 'undefined') {
     injectStyle()
   }
 
   const notify = () => {
+    debugger
     if (itemQuantity > 0) {
-      order['quantity'] = itemQuantity
-      dispatch({ type: ADD_ITEM, payload: { checkout: order } })
+      let orderDetail = { ...order, quantity: itemQuantity }
+      setOrder(orderDetail)
+      dispatch({ type: ADD_ITEM, payload: { checkout: orderDetail } })
       toast.dark(
-        `Added to Cart! \n Quantity: ${order['quantity']} - Color: ${order['colorId']} - Size: ${order['sizeId']}`
+        `Added to Cart! \n Quantity: ${orderDetail.quantity} - Color: ${orderDetail.colorId} - Size: ${orderDetail.sizeId}`
       )
-      order = { quantity: 0, sizeId: 0, colorId: 'null' }
+      setOrder(ORDER_INITIAL_STATE)
       setQuantity(0)
-    } else if (order['sizeId'] === 0) {
+    } else if (order.sizeId === 0) {
       toast.error('PLEASE SELECT A SIZE')
-    } else if (order['colorId'] === 'null') {
+    } else if (order.colorId === 'null') {
       toast.error('PLEASE SELECT A COLOR')
     } else {
       toast.error('PLEASE ADD QUANTITY')
