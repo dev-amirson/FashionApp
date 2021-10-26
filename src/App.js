@@ -6,13 +6,8 @@ export const App = () => (
   <Router>
     <div>
       <Switch>
-        <Route exact path={'/'}>
-          <Home />
-        </Route>
-
-        <Route path={'/cart'}>
-          <CheckOut />
-        </Route>
+        <Route exact path={'/'} component={Home} />
+        <Route path={'/cart'} component={CheckOut} />
       </Switch>
     </div>
   </Router>

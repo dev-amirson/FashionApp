@@ -40,15 +40,21 @@ export const SelectionDiv = () => {
       </button>
     ))
 
-  const getColors = () =>
-    colors.map(color => (
-      <button
-        className={'rounded-color-button'}
-        key={color}
-        style={{ backgroundColor: `${color.name}` }}
-        onClick={() => (order['colorId'] = color.name)}
-      ></button>
-    ))
+  const getColors = () => {
+    let aa = colors.map(color =>
+      color.quantity > 0 ? (
+        <button
+          className={'rounded-color-button'}
+          key={color.name}
+          style={{ backgroundColor: `${color.name}` }}
+          onClick={() => (order['colorId'] = color.name)}
+        ></button>
+      ) : (
+        <a />
+      )
+    )
+    return aa
+  }
 
   if (typeof window !== 'undefined') {
     injectStyle()
