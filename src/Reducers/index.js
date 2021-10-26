@@ -31,7 +31,7 @@ const Reducers = (state = initialState, action) => {
       sizes = [...copyState.product.sizes]
       cart = [...copyState.cart]
 
-      state['cart'].splice(action.payload.id - 1, 1)
+      cart.splice(action.payload.id - 1, 1)
 
       sizeIndex = sizes.findIndex(size => size.id == action.payload.size)
       colorIndex = sizes[sizeIndex].colors.findIndex(color => color.name == action.payload.color)

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 
-import 'components/CheckOutProduct/styles.scss'
 import { REMOVE_ITEM } from 'Actions'
+import 'components/CheckOutProduct/styles.scss'
 
 export const CheckOutProduct = ({
   productName,
