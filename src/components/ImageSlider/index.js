@@ -1,12 +1,12 @@
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
-import 'components/ImageSlider/styles.scss'
 import image1 from 'Assets/images/jumpsuit-1.jpg'
 import image2 from 'Assets/images/jumpsuit-2.jpg'
 import image3 from 'Assets/images/jumpsuit-3.jpg'
 import image4 from 'Assets/images/jumpsuit-4.jpg'
 import image5 from 'Assets/images/jumpsuit-5.jpg'
+import 'components/ImageSlider/styles.scss'
 
 export const ImageSlider = () => (
   <AliceCarousel

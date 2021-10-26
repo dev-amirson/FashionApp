@@ -60,7 +60,6 @@ export const SelectionDiv = () => {
   }
 
   const notify = () => {
-    debugger
     if (itemQuantity > 0) {
       let orderDetail = { ...order, quantity: itemQuantity }
       setOrder(orderDetail)
