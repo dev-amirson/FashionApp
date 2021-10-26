@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+
 import 'components/TopHeader/styles.scss'
 
 export const TopHeader = () => (
