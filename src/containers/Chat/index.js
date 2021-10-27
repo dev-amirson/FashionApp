@@ -6,6 +6,9 @@ import { useState } from 'react'
 import { ADD_MSG } from 'Actions'
 import 'containers/Chat/styles.scss'
 
+const CHAT_TIME_START = 9
+const CHAT_TIME_END = 20
+
 export const ChatModal = () => {
   const [isHidden, setState] = useState(false)
   const [msg, setMsg] = useState('')
@@ -13,29 +16,25 @@ export const ChatModal = () => {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  const divClick = () => {
+  const handleClick = () => {
     let time = new Date().getHours()
 
-    if (time <= 9 || time >= 20) {
+    if (time <= CHAT_TIME_START || time >= CHAT_TIME_END) {
       history.push('/contactus')
     } else {
-      if (isHidden === true) {
-        setState(false)
-      } else {
-        setState(true)
-      }
+      isHidden == true ? setState(false) : setState(true)
     }
   }
 
   const getChats = () =>
     chat.map((chat, i) => (
-      <p className={i == 0 ? 'left-msg' : 'right-msg'} key={i}>
+      <p className={i === 0 ? 'left-msg' : 'right-msg'} key={i}>
         {chat}
       </p>
     ))
 
-  const handleChange = e => {
-    setMsg(e.target.value)
+  const handleChange = event => {
+    setMsg(event.target.value)
   }
 
   const sendMsg = () => {
@@ -45,7 +44,7 @@ export const ChatModal = () => {
 
   return (
     <>
-      <div className={'div'} onClick={() => divClick()}>
+      <div className={'div'} onClick={() => handleClick()}>
         <span>
           <BsFillChatFill className={'icon'} />{' '}
         </span>
@@ -63,6 +62,7 @@ export const ChatModal = () => {
             value={msg}
             onChange={handleChange}
           />
+
           <button className={'send-btn'} onClick={sendMsg}>
             Send
           </button>

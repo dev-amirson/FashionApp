@@ -73,6 +73,6 @@ export const initialState = {
     symbol: '$',
     title: 'USD'
   },
-  size: { S: 123, M: 234, L: 345, XL: 456 },
+  size: { 123: 'S', 234: 'M', 345: 'L', 456: 'XL' },
   chat: ['Hi, How can I help you?']
 }

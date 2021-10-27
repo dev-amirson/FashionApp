@@ -1,3 +1,4 @@
+import { DAILY_FASHION } from 'Helpers'
 import 'components/Header/styles.scss'
 
 export const Header = () => (
@@ -6,7 +7,7 @@ export const Header = () => (
       <ul>
         <li className={'logo-heading'}>
           <a href={'/'}>
-            <h1>Daily Fashion</h1>
+            <h1>{DAILY_FASHION}</h1>
           </a>
         </li>
       </ul>

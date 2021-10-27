@@ -6,17 +6,19 @@ import { useState } from 'react'
 import Tooltip from '@mui/material/Tooltip'
 
 import { ADD_ITEM } from 'Actions'
+import {
+  COLOR_SELECTED,
+  COLOR_UNSELECTED,
+  ORDER_INITIAL_STATE,
+  SELECTED,
+  UNSELECTED
+} from 'Helpers'
 import 'containers/SelectionDiv/styles.scss'
-
-const ORDER_INITIAL_STATE = { quantity: 0, sizeId: 0, colorId: 'null' }
-const SELECTED = { boxShadow: '0px 0px 10px #000' }
-const UNSELECTED = { boxShadow: 'none' }
-const COLOR_SELECTED = { color: 'white' }
-const COLOR_UNSELECTED = { color: 'transparent' }
 
 export const SelectionDiv = () => {
   const dispatch = useDispatch()
   const [itemQuantity, setQuantity] = useState(0)
+  const [productQuantity, setProductQuantity] = useState(0)
   const [sizeSelected, setSelectedSize] = useState(-1)
   const [colorSelected, setSelectedColor] = useState('')
   const productDetails = useSelector(state => state.product)
@@ -24,17 +26,18 @@ export const SelectionDiv = () => {
   const [order, setOrder] = useState(ORDER_INITIAL_STATE)
 
   const getSizes = () =>
-    productDetails.sizes.map((size, i) => (
+    productDetails.sizes.map((size, index) => (
       <button
         className={'rounded-button'}
         key={size.id}
         onClick={() => {
           setOrder({ ...order, sizeId: size.id })
           showColors(size.colors)
-          setSelectedSize(i)
+          setSelectedSize(index)
           setSelectedColor('')
+          setQuantity(0)
         }}
-        style={i == sizeSelected ? SELECTED : UNSELECTED}
+        style={index == sizeSelected ? SELECTED : UNSELECTED}
       >
         {size.abbreviation}
       </button>
@@ -61,9 +64,11 @@ export const SelectionDiv = () => {
           onClick={() => {
             setOrder({ ...order, colorId: color.name })
             setSelectedColor(color.name)
+            setProductQuantity(color.quantity)
+            setQuantity(0)
           }}
         >
-          {colorSelected == color.name ? (
+          {colorSelected === color.name ? (
             <FaCheck style={COLOR_SELECTED} />
           ) : (
             <FaCheck style={COLOR_UNSELECTED} />
@@ -133,7 +138,14 @@ export const SelectionDiv = () => {
         <b> Select Quantity </b>{' '}
       </p>
       <div className={'count-div'}>
-        <button className={'counter-btn'} onClick={() => setQuantity(itemQuantity + 1)}>
+        <button
+          className={'counter-btn'}
+          onClick={() => {
+            productQuantity - itemQuantity == 0
+              ? toast.error('We do not have much of this')
+              : setQuantity(itemQuantity + 1)
+          }}
+        >
           +
         </button>
         <div className={'quantity-div'}>{itemQuantity}</div>

@@ -34,7 +34,7 @@ const Reducers = (state = initialState, action) => {
 
       cart.splice(action.payload.id - 1, 1)
 
-      sizeIndex = sizes.findIndex(size => size.id == action.payload.size)
+      sizeIndex = sizes.findIndex(size => size.abbreviation == action.payload.size)
       colorIndex = sizes[sizeIndex].colors.findIndex(color => color.name == action.payload.color)
       quantity = sizes[sizeIndex].colors[colorIndex].quantity
       sizes[sizeIndex].colors[colorIndex].quantity = quantity - action.payload.quantity
@@ -43,7 +43,7 @@ const Reducers = (state = initialState, action) => {
 
     case ADD_MSG:
       copyState = { ...state }
-      copyState['chat'].push(action.payload.msg)
+      copyState.chat.push(action.payload.msg)
       return { ...copyState }
 
     default:

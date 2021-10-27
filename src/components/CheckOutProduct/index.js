@@ -27,7 +27,7 @@ export const CheckOutProduct = ({
           <p> Color ID :</p>
           <p> Quantity :</p>
           <p> Size ID :</p>
-          <p> Total Price : </p>
+          <p> Price : </p>
         </div>
 
         <div className={'flex-right'}>
@@ -40,7 +40,6 @@ export const CheckOutProduct = ({
       </div>
 
       <div className={'product-div'}>
-        <button className={'checkout-btn'}>Checkout</button>
         <button className={'cancel-btn'} onClick={() => deleteRecord()}>
           Delete
         </button>

@@ -4,7 +4,7 @@
   bottom: 120px;
   height: 400px;
   left: 20px;
-  overflow-y: auto;
+  overflow-y: scroll;
   position: fixed;
   width: 300px;
 }
@@ -24,9 +24,20 @@
   box-shadow: 0 0 15px grey;
 }
 
-.icon{
-  color: whitesmoke;
+.icon {
+ color: whitesmoke;
  font-size: 30px;
+}
+
+.input {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  margin: 8px 5px;
+  padding: 14px 20px;
+  width: 100%;
 }
 
 .input-send {
@@ -35,6 +46,8 @@
   flex-direction: row;
   position: absolute;
   width: 100%;
+  position: relative;
+  bottom: 0px;
 }
 
 .send-btn {
@@ -47,18 +60,6 @@
   margin: 8px 5px;
   padding: 5px;
   width: 60px;
-
-}
-
-.input {
-  background-color: #fff;
-  border-radius: 10px;
-  border: none;
-  color: #000;
-  cursor: pointer;
-  margin: 8px 5px;
-  padding: 14px 20px;
-  width: 100%;
 }
 
 .left-msg {
